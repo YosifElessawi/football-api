@@ -1,0 +1,32 @@
+.team-conatiner {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2em;
+  background: rgba(128, 128, 128, 0.342);
+  border-radius: 1em;
+  width: 90%;
+}
+.team-logo {
+  align-self: center;
+  margin: 1em;
+}
+.team-name {
+  align-self: center;
+  justify-self: end;
+  margin: 1em;
+  color: white;
+  font-size: 4em;
+}
+.players-container {
+  margin: 1em;
+  background-color: rgba(255, 255, 255, 0.582);
+}
+.players-header {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.664);
+  border: 0.3em solid grey;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}

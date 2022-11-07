@@ -1,0 +1,8 @@
+.player {
+  display: flex;
+  justify-content: space-evenly;
+  border: 0.1em solid black;
+}
+.player-photo {
+  height: 30px;
+}
