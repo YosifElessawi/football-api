@@ -1,8 +1,14 @@
 .player {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
   border: 0.1em solid black;
+  padding-right: 0.2em;
+  font-weight: bold;
+  color: white;
+  border-radius: 0.5em;
 }
 .player-photo {
   height: 30px;
+  border-radius: inherit;
 }

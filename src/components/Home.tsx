@@ -40,7 +40,6 @@ export const Home = () => {
 
   return (
     <div className="home-image">
-      <h1 className="home-header">Welcome to Pitch Lord</h1>
       <div className="home-content">
         <form className="search-team">
           <label className="label">Search Team</label>

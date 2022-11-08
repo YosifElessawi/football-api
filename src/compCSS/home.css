@@ -1,6 +1,4 @@
 .home-image {
-  display: flex;
-  flex-direction: column;
   background-image: linear-gradient(rgba(0, 0, 0, 0.575), rgba(0, 0, 0, 0.575)),
     url("/src/images/HomeBG.jpg");
   height: 100%;
