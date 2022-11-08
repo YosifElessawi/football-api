@@ -1,0 +1,36 @@
+.fixture {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+  grid-gap: 0ch;
+  align-items: center;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.589);
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.212);
+  height: auto;
+  width: 99%;
+}
+.team--logo {
+  justify-self: center;
+  height: 35px;
+}
+.vs {
+  font-weight: bolder;
+  justify-self: center;
+  font-size: xx-large;
+}
+.fixture-teams {
+  font-weight: bolder;
+  justify-self: center;
+  font-size: larger;
+}
+.fixture-date {
+  grid-column: 1 / 6;
+  font-weight: bolder;
+  justify-self: center;
+  border-radius: 20px;
+  background: rgba(128, 128, 128, 0);
+}

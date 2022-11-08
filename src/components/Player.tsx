@@ -1,5 +1,5 @@
-import { border } from "@mui/system"
 import "../compCSS/player.css"
+
 export const Player = ({ ...props }) => {
   let color = "black"
   if (props.player.position === "Goalkeeper") {
