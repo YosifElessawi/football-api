@@ -1,19 +1,24 @@
+import { positions } from "@mui/system"
 import "../compCSS/player.css"
 
 export const Player = ({ ...props }) => {
-  let color = "black"
-  if (props.player.position === "Goalkeeper") {
-    color = "Yellow"
-  } else if (props.player.position === "Defender") {
-    color = "#297949"
-  } else if (props.player.position === "Midfielder") {
-    color = "#2D3DC8"
-  } else if (props.player.position === "Attacker") {
-    color = "#C82D53"
+  const determinePostition = (position: string) => {
+    if (position === "Goalkeeper") {
+      return "Yellow"
+    }
+    if (position === "Defender") {
+      return "#297949"
+    }
+    if (position === "Midfielder") {
+      return "#2D3DC8"
+    }
+    if (position === "Attacker") {
+      return "#C82D53"
+    }
   }
 
   const styles = {
-    color: color,
+    color: determinePostition(props.player.position as string),
   }
 
   return (
