@@ -1,17 +1,14 @@
 import React from "react"
 import { baseURL, options } from "../Api"
 import "../compCSS/teamCont.css"
-import { Player } from "./Player"
-import { Players } from "../types/players"
-import { Fixture } from "./Fixture"
-import { Fixtures } from "../types/fixtures"
+import { TeamProps, Player, Fixture } from "../types/types"
+import { FixtureC } from "./FixtureC"
+import { PlayerC } from "./PlayerC"
 
-export const TeamCont = ({ ...props }) => {
-  let [playersArray, setplayersArray] = React.useState<Players[]>(
-    [] as Players[]
-  )
-  let [fixturesArray, setFixturesArray] = React.useState<Fixtures[]>(
-    [] as Fixtures[]
+export const TeamC = ({ team }: TeamProps) => {
+  let [playersArray, setplayersArray] = React.useState<Player[]>([] as Player[])
+  let [fixturesArray, setFixturesArray] = React.useState<Fixture[]>(
+    [] as Fixture[]
   )
 
   const d = new Date()
@@ -20,7 +17,7 @@ export const TeamCont = ({ ...props }) => {
   React.useEffect(() => {
     async function getPlayersInfo() {
       const res = await fetch(
-        `${baseURL}players/squads?team=${props.team.id}`,
+        `${baseURL}players/squads?team=${team.id}`,
         options
       )
       const response = await res.json()
@@ -33,7 +30,7 @@ export const TeamCont = ({ ...props }) => {
   React.useEffect(() => {
     async function getFixtures() {
       const res = await fetch(
-        `${baseURL}fixtures?season=${year}&team=${props.team.id}&next=10`,
+        `${baseURL}fixtures?season=${year}&team=${team.id}&next=10`,
         options
       )
       const data = await res.json()
@@ -43,17 +40,17 @@ export const TeamCont = ({ ...props }) => {
   }, [])
 
   const playerElements = playersArray.map((player) => {
-    return <Player key={player.id} player={player} />
+    return <PlayerC key={player.id} player={player} />
   })
 
   const fixtureElements = fixturesArray.map((fixture) => {
-    return <Fixture key={fixture.fixture.id} fixture={fixture} />
+    return <FixtureC key={fixture.fixture.id} fixture={fixture} />
   })
 
   return (
     <div className="team-conatiner">
-      <img src={props.team.logo} alt="No Image Found" className="team-logo" />
-      <h1 className="team-name">{props.team.name}</h1>
+      <img src={team.logo} alt=" " className="team-logo" />
+      <h1 className="team-name">{team.name}</h1>
       <div className="players-container">
         <h2 className="players-header">Players</h2>
         {playerElements}

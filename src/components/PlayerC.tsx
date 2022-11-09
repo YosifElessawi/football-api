@@ -1,7 +1,7 @@
-import { positions } from "@mui/system"
 import "../compCSS/player.css"
+import { PlayerProps } from "../types/types"
 
-export const Player = ({ ...props }) => {
+export const PlayerC = ({ player }: PlayerProps) => {
   const determinePostition = (position: string) => {
     if (position === "Goalkeeper") {
       return "Yellow"
@@ -18,14 +18,14 @@ export const Player = ({ ...props }) => {
   }
 
   const styles = {
-    color: determinePostition(props.player.position as string),
+    color: determinePostition(player.position as string),
   }
 
   return (
     <div className="player">
-      <img src={props.player.photo} alt="No Image" className="player-photo" />
-      <span>{props.player.name}</span>
-      <span style={styles}>{props.player.position}</span>
+      <img src={player.photo} alt="No Image" className="player-photo" />
+      <span>{player.name}</span>
+      <span style={styles}>{player.position}</span>
     </div>
   )
 }

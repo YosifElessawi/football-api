@@ -1,8 +1,8 @@
 import React from "react"
 import "../compCSS/home.css"
-import { Team } from "../types/team"
+import { Team } from "../types/types"
 import { baseURL, options } from "../Api"
-import { TeamCont } from "./TeamCont"
+import { TeamC } from "./TeamC"
 
 export const Home = () => {
   let [teamName, setTeamName] = React.useState<string>("")
@@ -54,7 +54,7 @@ export const Home = () => {
             Search
           </button>
         </form>
-        {teamData.name && <TeamCont key={teamData.id} team={teamData} />}
+        {teamData.name && <TeamC key={teamData.id} team={teamData} />}
       </div>
     </div>
   )
